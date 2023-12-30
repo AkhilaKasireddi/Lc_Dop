@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool makeEqual(vector<string>& w) {
+       unordered_map<char,int> s;
+       for(auto a: w){
+           for(auto c: a){
+               s[c]++;
+           }
+       }
+       for(auto c : s){
+           if((c.second % w.size()) != 0){
+               return false;
+           }
+       }
+       return true;
+    }
+};
